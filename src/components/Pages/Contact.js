@@ -1,42 +1,31 @@
+import "../styles/Contact.scss";
 import { useState } from "react";
 
-const ContactForm = () => {
-  const [status, setStatus] = useState("Submit");
+export default function ContactPage() {
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
+    setMessage("");
     e.preventDefault();
-    setStatus(true);
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    console.log(details);
-  };
+    window.alert("Message Submited");
+  }
 
   return (
-    <div className="contact-form">
-      <h2 className="contact-title">Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-3">
-          <label className="form-label">Name</label>
-          <input type="text" placeholder="Name" />
-          <label className="form-label">Email</label>
-          <input type="email" placeholder="Email" />
-          <label className="form-label">Phone</label>
-          <input type="tel" placeholder="Phone" />
-          <label className="form-label">Subject</label>
-          <input type="text" placeholder="Subject" />
-          <label className="form-label">Message</label>
-          <textarea placeholder="Message" />
-        </div>
-        <button className="btn-contact" type="submit">
-          {status}
-        </button>
-      </form>
+    <div className="contact-page">
+      <h1>Contact Page</h1>
+
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Let us know what you think"
+            className="contact-box"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+
+          <button className="contact-btn">Submit</button>
+        </form>
+      </div>
     </div>
   );
-};
-
-export default ContactForm;
+}

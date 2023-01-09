@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { CartContext } from "../../context/CartProvider";
+import React, { useState, useEffect } from "react";
 
+import { CartData } from "../context/CartProvider";
 import "..//..//styles/main.css";
 
 export default function Men() {
   const [mens, setMens] = useState([]);
-  const { clearCart, addProduct } = useContext(CartContext);
+  const { addProduct } = CartData();
   console.log(mens);
 
   const mensPage = async () => {

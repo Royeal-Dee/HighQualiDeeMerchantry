@@ -1,0 +1,22 @@
+.app {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    font-style: none;
+    background-color: #1a0001;
+    padding: 10px;
+    font-size: 2rem;
+
+    .navlink {
+      color: #6f0434;
+      text-decoration: none;
+      color: #1a0001;
+    }
+
+    .navlink:hover {
+      color: #a74262;
+    }
+  }
+}

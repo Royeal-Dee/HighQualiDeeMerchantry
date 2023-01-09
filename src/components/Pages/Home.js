@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../../components/styles/home.css";
 
 export default function Home() {
   const [product, setProduct] = useState([]);

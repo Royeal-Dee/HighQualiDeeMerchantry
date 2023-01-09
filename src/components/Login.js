@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../components/styles/App.css";
+import "../components/styles/App.scss";
 import axios from "axios";
 
 export default function Login({ token, setToken }) {
@@ -19,34 +19,35 @@ export default function Login({ token, setToken }) {
         password: password,
       },
     })
-    .then((res) => {
-      console.log(res.data.token);
-      setToken(res.data.token);
-      localStorage.setItem("userToken", res.data.token);
-    })
-    .catch((err) => {
-      console.log(err.response);
-      setError(err.response.data)
-    })
+      .then((res) => {
+        console.log(res.data.token);
+        setToken(res.data.token);
+        localStorage.setItem("userToken", res.data.token);
+      })
+      .catch((err) => {
+        console.log(err.response);
+        setError(err.response.data);
+      });
   };
 
   return (
-  <div className="login">
-  <div className="login-input">
-    <input 
-      value={userName} 
-      onChange={(e) => setUsername(e.target.value)} 
-      type="text" 
-      placeholder="Username" 
-    />
-    <input value={password} 
-    onChange={(e) => setPassword(e.target.value)} 
-    type="password" 
-    placeholder="Password" 
-    />
-    {error && <small>{error}</small>}
-    <button onClick={loginHandler}>Login</button>
-  </div>
-  </div>
+    <div className="login">
+      <div className="login-input">
+        <input
+          value={userName}
+          onChange={(e) => setUsername(e.target.value)}
+          type="text"
+          placeholder="Username"
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+        />
+        {error && <small>{error}</small>}
+        <button onClick={loginHandler}>Login</button>
+      </div>
+    </div>
   );
-};
+}
