@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  color: #ff91af;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: #1a0001;
+  color: #ff91af;
+}
+
+.nav {
+  color: #ff91af;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.site-title {
+  text-shadow: 2px 2px 8px rgb(51 50 95 / 40%);
+  font-size: 1.43rem;
+  color: #ff91af;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: #ff91af;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.nav li.active {
+  background-color: #a74262;
+}
+
+.nav li:hover {
+  background-color: #c45c7b;
+  color: #1a0001;
+}
+
+.login {
+  background-color: #1a0001;
+}
+
+.login-input {
+  display: flex;
+  background-color: #1a0001;
+}

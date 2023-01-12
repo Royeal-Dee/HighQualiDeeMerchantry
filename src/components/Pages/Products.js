@@ -1,13 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { CartData } from "../context/CartProvider";
+import { CartContext } from "../context/CartProvider";
+// import { CartData } from "../context/CartProvider";
 import MoneyFormatter from "../MoneyFormatter";
+import "../styles/Products.scss";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("all");
-  const { cart } = CartData();
+  const { addProduct, cart } = useContext(CartContext);
+  // const { cart } = CartData();
   const formatter = MoneyFormatter;
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <h1 className="header" style={{ color: "#ff91af", fontSize: 70 }}>
+      <h1 className="header" style={{ fontSize: 70 }}>
         HighQualiDee Products
       </h1>
       <div className="button-container">
@@ -94,11 +97,11 @@ export default function Products() {
                 </h5>
                 <h5 className="product-category">{data.category}</h5>
                 <h5 className="product-link">
-                  <Link to={`/products/${data.id}`}>See More Details</Link>
+                  <Link to={`/Products/${data.id}`}>See More Details</Link>
                 </h5>
                 <button
                   className="add-to-cart-btn"
-                  onClick={() => console.log(data)}
+                  onClick={() => addProduct(data)}
                 >
                   Add to Cart
                 </button>

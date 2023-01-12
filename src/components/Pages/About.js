@@ -21,7 +21,12 @@ const About = () => {
               am understanding the concepts and the fundamentals of each
               component and how they work together to ensure the ability to
               properly implement functional and aesthetically pleasing React
-              Apps.
+              Apps. It is also very important for me to know what I am capable
+              of doing on my own and what stregths and weaknesses I bring to the
+              table. Although I have full faith in our teams ability to come
+              together to build and find solutions, I do not want to be solely
+              dependent upon others and would like to develop the ability to
+              work independently without fear or hinderance.
             </p>
             <h3>Explain what you learned throughout your time here</h3>
             <p className="explain-learned">

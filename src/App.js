@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import "./components/styles/App.scss";
+import "./components/styles/Main.scss";
 import Navbar from "./components/Navigation/Navbar";
 import Footer from "./components/Navigation/Footer";
 import Products from "./components/Pages/Products";
@@ -27,9 +27,7 @@ export default function App() {
           <div className="navbar">
             <Navbar setToken={setToken} />
             {token ? <Products /> : <Login token={token} setToken={setToken} />}
-            <NavLink className="navlink" to="/">
-              Login
-            </NavLink>
+
             <NavLink className="navlink" to="/Products">
               Products
             </NavLink>
@@ -45,7 +43,6 @@ export default function App() {
           </div>
 
           <Switch>
-            <Route exact path="/" component={Login} />
             <Route path="/Products" component={Products} />
             <Route path="/Products/:id" component={IndividualProduct} />
             <Route path="/Cart" component={Cart} />

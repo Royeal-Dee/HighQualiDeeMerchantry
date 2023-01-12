@@ -1,4 +1,5 @@
 .app {
+  overflow: hidden;
   .navbar {
     display: flex;
     align-items: center;
@@ -19,4 +20,11 @@
       color: #a74262;
     }
   }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  background-color: #1a0001;
+  color: #ff91af;
 }

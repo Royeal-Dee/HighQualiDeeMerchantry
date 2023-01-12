@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { CartData } from "../context/CartProvider";
@@ -9,9 +9,9 @@ export default function Cart() {
   const { cart, clearCart } = CartData();
   const formatter = MoneyFormatter;
 
-  // useEffect(() => {
-  //   CartGetAll();
-  // }, []);
+  useEffect(() => {
+    CartGetAll();
+  }, [cart, clearCart]);
 
   function cartTotal() {
     const totals = [];
@@ -67,37 +67,35 @@ export default function Cart() {
   );
 }
 
-//   const CartGetAll = async () => {
-//     fetch("https://fakestoreapi.com/carts")
-//       .then((res) => res.json())
-//       .then((json) => console.log(json));
-//   };
+const CartGetAll = async () => {
+  fetch("https://fakestoreapi.com/carts")
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+  return (
+    <div
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <h2>HighQualiDee Purchase</h2>
 
-//   return (
-//     <div
-//       style={{
-//         justifyContent: "center",
-//         alignItems: "center",
-//         height: "100vh",
-//       }}
-//     >
-//       <h2>HighQualiDee Purchase</h2>
-
-//       {cart.length > 0 ? (
-//         <>
-//           {cart.map((product) => {
-//             return (
-//               <div key={product.id}>
-//                 <h3>{product.name}</h3>
-//                 <p>{product.price}</p>
-//               </div>
-//             );
-//           })}
-//           <h1>Total: {total}</h1>
-//         </>
-//       ) : (
-//         <h1>No products in cart</h1>
-//       )}
-//     </div>
-//   );
-// }
+      {Cart.length > 0 ? (
+        <>
+          {Cart.map((product) => {
+            return (
+              <div key={product.id}>
+                <h3>{product.name}</h3>
+                <p>{product.price}</p>
+              </div>
+            );
+          })}
+          {/* <h1>Total: {total}</h1> */}
+        </>
+      ) : (
+        <h1>No products in cart</h1>
+      )}
+    </div>
+  );
+};

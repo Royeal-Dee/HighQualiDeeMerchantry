@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "..//..//styles/main.css";
+import "../styles/Main.scss";
 
 export default function Women() {
   // const [data, setData] = useState();
