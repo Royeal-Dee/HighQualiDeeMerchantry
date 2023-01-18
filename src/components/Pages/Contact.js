@@ -17,7 +17,7 @@ export default function ContactPage() {
       <div>
         <form onSubmit={handleSubmit}>
           <input
-            placeholder="Let us know what you think"
+            placeholder="Let us know what you think..."
             className="contact-box"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

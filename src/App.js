@@ -43,7 +43,7 @@ export default function App() {
           </div>
 
           <Switch>
-            <Route path="/Products" component={Products} />
+            <Route exact path="/Products" component={Products} />
             <Route path="/Products/:id" component={IndividualProduct} />
             <Route path="/Cart" component={Cart} />
             <Route path="/Contact" component={Contact} />

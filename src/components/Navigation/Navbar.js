@@ -9,14 +9,14 @@ export default function NavBar() {
       <a href="/Products" className="site-title">
         HighQualiDee Merchantry
       </a>
-      <ul>
+      {/* <ul>
         <li>
           <a href="/Cart" className="btn ">
             Cart
           </a>
         </li>
-        <li>
-          {/* <a href="/electronics" className="btn">
+        <li> */}
+      {/* <a href="/electronics" className="btn">
             Electronics
           </a>
         </li>
@@ -36,7 +36,7 @@ export default function NavBar() {
           </a>
         </li>
         <li> */}
-          <a href="/Contact" className="btn">
+      {/* <a href="/Contact" className="btn">
             Contact
           </a>
         </li>
@@ -45,7 +45,7 @@ export default function NavBar() {
             About
           </a>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 }

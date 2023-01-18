@@ -1,24 +1,38 @@
 .contact-page {
+  background-color: #3b0005;
+  text-align: center;
   font-size: 2rem;
   height: 100vh;
+}
 
-  .contact-box {
-    width: 60vw;
-    padding: 10px;
-    margin-right: 20px;
-    filter: drop-shadow(0 0.1rem 0.1rem rgba(0, 0, 0, 0.3));
-  }
+.contact-page h1 {
+  text-shadow: 4px 4px 10px rgb(26 0 1 / 100%);
+}
 
-  .feedback-box:clicked {
-    border: none;
-  }
+.contact-box {
+  border-radius: 5px;
+  width: 60vw;
+  padding: 10px;
+  margin-right: 20px;
+  filter: drop-shadow(0 0.2rem 0.2rem rgb(255 145 175 / 80%));
+}
 
-  .contact-btn {
-    color: #ff91af;
-    border: none;
-    background-color: #6f0434;
-    padding: 0.5vw;
-    cursor: pointer;
-    filter: drop-shadow(0 0.1rem 0.1rem rgba(0, 0, 0, 0.3));
-  }
+.feedback-box:clicked {
+  border: none;
+}
+
+.contact-btn {
+  border-radius: 5px;
+  color: #ff91af;
+  border: none;
+  background-color: #6f0434;
+  padding: 0.5vw;
+  cursor: pointer;
+  filter: drop-shadow(0 0.2rem 0.2rem rgb(255 145 175 / 80%));
+}
+
+.contact-btn:hover {
+  background-color: #c45c7b;
+  color: #1a0001;
+  filter: drop-shadow(0 0.3rem 0.3rem rgb(26 0 1 / 100%));
 }

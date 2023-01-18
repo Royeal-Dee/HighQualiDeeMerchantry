@@ -5,12 +5,7 @@ export const CartContext = createContext();
 export default function CartProvider({ children }) {
   const [isInCart, setIsInCart] = useState(false);
   const [exists, setExists] = useState(false);
-  const [cart, setCart] = useState([
-    {
-      id: 1,
-      itemType: "Iphone",
-    },
-  ]);
+  const [cart, setCart] = useState([]);
 
   // function isInCart(product) {
   //   setExists(cart.find((prod) => prod.id === product.id));
@@ -31,8 +26,19 @@ export default function CartProvider({ children }) {
     setCart([]);
   };
 
-  const addProduct = (id, itemType) => {
-    setCart((c) => [...c, { id, itemType }]);
+  const addProduct = (product) => {
+    const exists = cart.find((prod) => prod.id === product.id);
+    product.quantity += 1;
+
+    if (exists) {
+      setCart((previous) => {
+        const newCart = previous.filter((item) => item.id !== product.id);
+
+        return [...newCart, { ...product }];
+      });
+    } else {
+      setCart((c) => [...c, { ...product }]);
+    }
 
     // const cartCopy = [...cart];
     // const exists = cartCopy.find((item) => item.id === product.id);

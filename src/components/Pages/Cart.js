@@ -9,15 +9,48 @@ export default function Cart() {
   const { cart, clearCart } = CartData();
   const formatter = MoneyFormatter;
 
-  useEffect(() => {
-    CartGetAll();
-  }, [cart, clearCart]);
+  // useEffect(() => {
+  //   cartGetAll();
+  // }, [cart, clearCart]);
+
+  // const cartGetAll = async () => {
+  //   fetch("https://fakestoreapi.com/carts")
+  //     .then((res) => res.json())
+  //     .then((json) => console.log(json));
+  //   return (
+  //     <div
+  //       style={{
+  //         justifyContent: "center",
+  //         alignItems: "center",
+  //         height: "100vh",
+  //       }}
+  //     >
+  //       <h2>HighQualiDee Purchase</h2>
+
+  //       {cart.length > 0 ? (
+  //         <>
+  //           {cart.map((product) => {
+  //             return (
+  //               <div key={product.id}>
+  //                 <h3>{product.name}</h3>
+  //                 <p>{product.price}</p>
+  //               </div>
+  //             );
+  //           })}
+  //           {/* <h1>Total: {total}</h1> */}
+  //         </>
+  //       ) : (
+  //         <h1>No products in cart</h1>
+  //       )}
+  //     </div>
+  //   );
+  // };
 
   function cartTotal() {
     const totals = [];
     if (cart.length > 0) {
-      cart.forEach((Products) => {
-        totals.push(Products[0].price * Products[1].quantity);
+      cart.forEach((product) => {
+        totals.push(product.price * product.quantity);
       });
       return totals.reduce((prev, current) => prev + current, 0);
     }
@@ -31,28 +64,28 @@ export default function Cart() {
       </div>
 
       <div className="user-cart">
-        {cart.map((data) => {
+        {cart.map((product) => {
           return (
-            <div key={data[0].id}>
+            <div key={product.id}>
               <div className="individual-product">
                 <img
-                  src={data[0].image}
+                  src={product.image}
                   alt="product-img"
                   className="product-image"
                 />
 
                 <div className="product-description-container">
-                  <h5 className="product-name">{data[0].title}</h5>
-                  <h5 className="product-description">{data[0].description}</h5>
-                  <h5 className="product-category">{data[0].category}</h5>
+                  <h5 className="product-name">{product.title}</h5>
+                  <h5 className="product-description">{product.description}</h5>
+                  <h5 className="product-category">{product.category}</h5>
                   <h5>
-                    <Link to={`/products/${data[0].id}`}>See details</Link>
+                    <Link to={`/products/${product.id}`}>See details</Link>
                   </h5>
                 </div>
 
                 <div>
-                  <h2>Quantity: {data[1].quantity}</h2>
-                  <h2 className="product-price">{formatter(data[0].price)}</h2>
+                  <h2>Quantity: {product.quantity}</h2>
+                  <h2 className="product-price">{formatter(product.price)}</h2>
                 </div>
               </div>
             </div>
@@ -60,42 +93,9 @@ export default function Cart() {
         })}
       </div>
       <h1 className="header">Total: {formatter(cartTotal())}</h1>
-      <button className="empty-btn" onClick={() => clearCart()}>
+      <button className="empty-btn" onClick={clearCart}>
         Empty Cart
       </button>
     </div>
   );
 }
-
-const CartGetAll = async () => {
-  fetch("https://fakestoreapi.com/carts")
-    .then((res) => res.json())
-    .then((json) => console.log(json));
-  return (
-    <div
-      style={{
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <h2>HighQualiDee Purchase</h2>
-
-      {Cart.length > 0 ? (
-        <>
-          {Cart.map((product) => {
-            return (
-              <div key={product.id}>
-                <h3>{product.name}</h3>
-                <p>{product.price}</p>
-              </div>
-            );
-          })}
-          {/* <h1>Total: {total}</h1> */}
-        </>
-      ) : (
-        <h1>No products in cart</h1>
-      )}
-    </div>
-  );
-};
