@@ -2,13 +2,15 @@ import React from "react";
 import "../styles/Main.scss";
 import "../styles/Nav.scss";
 
+import { NavLink } from "react-router-dom";
+
 export default function NavBar() {
   // const path = window.location.pathname;
   return (
     <nav className="nav">
-      <a href="/Products" className="site-title">
+      <NavLink exact to="/">
         HighQualiDee Merchantry
-      </a>
+      </NavLink>
       {/* <ul>
         <li>
           <a href="/Cart" className="btn ">

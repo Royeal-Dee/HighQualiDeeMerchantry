@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 import { useState } from "react";
 
 import "./components/styles/Main.scss";
@@ -16,6 +11,7 @@ import Cart from "./components/Pages/Cart";
 import Contact from "./components/Pages/Contact";
 import About from "./components/Pages/About";
 import CartProvider from "./components/context/CartProvider";
+import Home from "./components/Pages/Home";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("userToken") ?? null);
@@ -23,11 +19,10 @@ export default function App() {
   return (
     <div className="App">
       <CartProvider>
-        <Router>
+        <BrowserRouter>
           <div className="navbar">
             <Navbar setToken={setToken} />
             {token ? <Products /> : <Login token={token} setToken={setToken} />}
-
             <NavLink className="navlink" to="/Products">
               Products
             </NavLink>
@@ -43,14 +38,15 @@ export default function App() {
           </div>
 
           <Switch>
-            <Route exact path="/Products" component={Products} />
-            <Route path="/Products/:id" component={IndividualProduct} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/products" component={Products} />
+            <Route path="/products/:id" component={IndividualProduct} />
             <Route path="/Cart" component={Cart} />
             <Route path="/Contact" component={Contact} />
             <Route path="/About" component={About} />
           </Switch>
           <Footer />
-        </Router>
+        </BrowserRouter>
       </CartProvider>
     </div>
   );

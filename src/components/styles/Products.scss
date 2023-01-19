@@ -4,9 +4,12 @@
   justify-content: center;
   text-align: center;
   background-color: #3b0005;
+  margin-bottom: 7%;
 }
 
 .header {
+  margin-top: 7%;
+  margin-bottom: 11vh;
   color: #ff91af;
   display: flex;
   justify-content: center;
@@ -65,12 +68,18 @@
 }
 
 .product-description-container {
-  border-radius: 0 0 11px 11px;
+  text-align: center;
+  border-radius: 11px 11px 11px 11px;
   width: 40vw;
   background-color: #53001f;
-  color: #c45c7b;
+  color: #1a0001;
   filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.5));
   font-size: 1rem;
+}
+
+.product-name {
+  font-size: large;
+  padding: 0 5px 0 5px;
 }
 
 .add-to-cart-btn {

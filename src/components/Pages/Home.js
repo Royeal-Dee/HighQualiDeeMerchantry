@@ -9,7 +9,7 @@ export default function Home() {
   }, []);
 
   const fakestoreapi = async () => {
-    const response = await fetch("https://fakestoreapi.com/products");
+    const response = await fetch("https://fakestoreapi.com/products?limit=5");
     const jsonData = await response.json();
     setProduct(jsonData);
   };

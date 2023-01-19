@@ -2,6 +2,9 @@
   overflow: hidden;
 }
 .navbar {
+  z-index: 2;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -22,6 +25,7 @@
 }
 
 .footer {
+  width: 100%;
   justify-content: center;
   padding-top: 5px;
   display: flex;

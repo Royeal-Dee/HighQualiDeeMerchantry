@@ -4,12 +4,15 @@
 }
 
 body {
+  margin-bottom: 20px;
   background-color: #3b0005;
   margin: auto;
   overflow-x: hidden;
 }
 
 .navbar {
+  filter: drop-shadow(0 0.2rem 0.2rem rgb(26 0 1 / 50%));
+  position: fixed;
   background-color: #1a0001;
   color: #ff91af;
 }
