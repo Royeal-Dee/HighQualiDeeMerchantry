@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Main.scss";
+import "../styles/Home.scss";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
