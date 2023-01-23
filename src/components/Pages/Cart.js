@@ -57,10 +57,6 @@ export default function Cart() {
     return false;
   }
 
-  function removeProduct(productId) {
-    setCart((c) => c.filter((p) => p.id !== productId));
-  }
-
   return (
     <div className="cart-page-container">
       <div className="header">
