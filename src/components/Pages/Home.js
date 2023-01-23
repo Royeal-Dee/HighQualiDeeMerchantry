@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Main.scss";
+import "../styles/Home.scss";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
@@ -9,7 +9,7 @@ export default function Home() {
   }, []);
 
   const fakestoreapi = async () => {
-    const response = await fetch("https://fakestoreapi.com/products");
+    const response = await fetch("https://fakestoreapi.com/products?limit=5");
     const jsonData = await response.json();
     setProduct(jsonData);
   };
@@ -20,7 +20,7 @@ export default function Home() {
         {product.map((value) => {
           return (
             <>
-              <div className="product-container">
+              <div style={""} className="product-container">
                 <div className="content-container">
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>

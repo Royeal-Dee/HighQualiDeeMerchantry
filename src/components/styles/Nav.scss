@@ -63,3 +63,15 @@ body {
   display: flex;
   background-color: #1a0001;
 }
+
+.footer {
+  position: absolute;
+  width: 100%;
+  min-height: 1.43rem;
+  align-items: flex-end;
+  flex-grow: 0;
+  justify-content: center;
+  display: flex;
+  background-color: #1a0001;
+  color: #ff91af;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import { CartData } from "../context/CartProvider";
@@ -57,6 +57,10 @@ export default function Cart() {
     return false;
   }
 
+  function removeProduct(productId) {
+    setCart((c) => c.filter((p) => p.id !== productId));
+  }
+
   return (
     <div className="cart-page-container">
       <div className="header">
@@ -76,7 +80,6 @@ export default function Cart() {
 
                 <div className="product-description-container">
                   <h5 className="product-name">{product.title}</h5>
-                  <h5 className="product-description">{product.description}</h5>
                   <h5 className="product-category">{product.category}</h5>
                   <h5>
                     <Link to={`/products/${product.id}`}>See details</Link>
