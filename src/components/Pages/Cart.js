@@ -24,7 +24,7 @@ export default function Cart() {
   return (
     <div className="cart-page-container">
       <div className="header">
-        <h2>Cart</h2>
+        <h1>Cart</h1>
       </div>
 
       <div className="user-cart">
